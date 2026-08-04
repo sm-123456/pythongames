@@ -1,0 +1,27 @@
+DictNUM={
+    "0":0,
+    "1":0,
+    "2":0,
+    "3":0,
+    "4":0,
+    "5":0,
+    "6":0,
+    "7":0,
+    "8":0,
+    "9":0,
+}
+
+phoneNum=input("Enter your phone number")
+
+for num in phoneNum:
+    if num in DictNUM:
+        DictNUM[num] +=1
+
+pangram=True
+for value in DictNUM.values():
+    if value==0:
+        pangram=False
+if pangram:
+    print("Yes a Pangram")
+else:
+    print("Not a Pangram")

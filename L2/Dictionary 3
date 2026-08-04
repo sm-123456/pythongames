@@ -1,0 +1,17 @@
+mydict={
+    "laptop":10,
+    "tv":5,
+    "ac":7,
+    "phone":9,
+}
+
+for key in mydict:
+    print(f"The number of {key}s sold are {mydict[key]}")
+
+L=0
+for key in mydict:
+    L+=mydict[key]
+
+print(L)
+
+print(f"Average Sale for the month= {L/4}")

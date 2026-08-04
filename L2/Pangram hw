@@ -1,0 +1,22 @@
+DictVOWEL={
+    "a":0,
+    "e":0,
+    "i":0,
+    "o":0,
+    "u":0,
+}
+
+Sentence=input("Enter a sentence ")
+
+for VOWEL in Sentence:
+    if VOWEL in DictVOWEL:
+        DictVOWEL[VOWEL] =1
+
+pangram=True
+for value in DictVOWEL.values():
+    if value==0:
+        pangram=False
+if pangram:
+    print("Has all vowels")
+else:
+    print("Doesn't have all vowels")
