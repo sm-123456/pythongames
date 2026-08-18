@@ -1,0 +1,37 @@
+import pgzrun #python game zero run
+from random import randint
+
+WIDTH=400
+HEIGHT=400
+TITLE="Shapes"
+
+x=y=20
+w=h=360
+
+r=randint(0,255)
+g=randint(0,255)
+b=randint(0,255)
+
+def draw():
+
+    x=y=20
+    w=h=360
+
+    r=randint(0,255)
+    g=randint(0,255)
+    b=randint(0,255)
+
+    screen.fill("skyblue")
+    for i in range(13):
+        #(x,y),(w,h),color
+        rect=Rect((x,y),(w,h))
+        screen.draw.filled_rect(rect,(r,g,b))        
+        r=randint(0,255)
+        g=randint(0,255)
+        b=randint(0,255) 
+        x+=20
+        y+=20
+        w-=40
+        h-=40
+
+pgzrun.go()
