@@ -14,3 +14,16 @@ n=0
 
 for i in range(len(list)):
     print(list[i])
+
+
+hwlist=[10,20,30,40,50,60,70,80,90,100]
+
+print(hwlist[2])
+
+print(hwlist[4])
+
+for i in hwlist:
+    print(i)
+
+for q in range(0,10,1):
+    print(hwlist[q])
