@@ -73,34 +73,53 @@ readsplit()
 
 timeramount=(10)
 
+score=0
+
 def timerchange():
     global timeramount
     if timeramount>0:
         timeramount=timeramount-1
+
+def answerquestion(clickedbutton):
+    global score
+    if clickedbutton==splitquestions[5]:
+        score+=1
+        global timeramount
+        if timeramount>0 and len(questions)>0:
+            readsplit()
+            timeramount=10
+        else:
+            endgame() 
+    else:
+        if timeramount>0 and len(questions)>0:
+            readsplit()
+            timeramount=10       
+        else:    
+            endgame()
 
 def on_mouse_down(pos):
     if skip.collidepoint(pos):
         skipquestion()
     elif button1.collidepoint(pos):
         if splitquestions[5]==1: 
-            answerquestion()
+            answerquestion(1)
         else:
-            answerquestion()
+            answerquestion(0)
     elif button2.collidepoint(pos): 
         if splitquestions[5]==2:
-            answerquestion()   
+            answerquestion(2)   
         else:
-            answerquestion()
+            answerquestion(0)
     elif button3.collidepoint(pos): 
         if splitquestions[5]==3:
-            answerquestion()
+            answerquestion(3)
         else:
-            answerquestion()
+            answerquestion(0)
     elif button4.collidepoint(pos): 
         if splitquestions[5]==4:
-            answerquestion()
+            answerquestion(4)
         else:
-            answerquestion()
+            answerquestion(0)
 
 def endgame():
     pass
